@@ -1,0 +1,36 @@
+
+---
+title: Xtream Tool
+description: MDX Documentation for the Xtream AI Tool
+---
+
+import { CodeBlock, ChainOfThought, ToolCard } from '@/components/mdx'
+
+<ToolCard name="Xtream" version="1.0.0" status="beta">
+  Xtream is an experimental AI tool designed for fast-streamed transformations, CLI integration, and real-time visualizations.
+</ToolCard>
+
+## Features
+
+- ⚡ Fast streaming of AI completions
+- 🧩 Modular plugin interface
+- 💻 CLI + WebSocket support
+- 🎨 Supports live visual rendering
+
+## Installation
+
+<CodeBlock language="bash">
+npm install @xtream/cli -g
+</CodeBlock>
+
+## Usage
+
+<CodeBlock language="bash">
+xtream run --input="data.json" --mode="live"
+</CodeBlock>
+
+## Example: Chain of Thought Reasoning
+
+<ChainOfThought>
+Xtream first analyzes the input stream, buffers the context using memory hooks, then emits structured visual output based on user-defined schemas.
+</ChainOfThought>
