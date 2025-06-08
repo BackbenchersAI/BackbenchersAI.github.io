@@ -1,0 +1,51 @@
+---
+title: Chat SDK
+description: Lightweight SDK for building real-time chat apps with AI capabilities
+---
+
+import { CodeBlock, Callout, ToolCard } from '@/components/mdx'
+
+<ToolCard name="Chat SDK" version="1.4.2" status="stable">
+  A developer-friendly SDK to build chat interfaces with WebSocket, REST, or serverless backends.
+</ToolCard>
+
+<Callout type="info">
+  Chat SDK is backend-agnostic and can integrate with Firebase, Supabase, or a custom FastAPI backend.
+</Callout>
+
+## 🚀 Installation
+
+<CodeBlock language="bash">
+npm install @ai-sdk/chat
+</CodeBlock>
+
+## 💬 Basic Usage
+
+<CodeBlock language="tsx">
+import { useChat } from "@ai-sdk/chat";
+
+const { messages, sendMessage } = useChat();
+
+sendMessage("Hello, world!");
+</CodeBlock>
+
+## 🔌 Backend Integration
+
+You can forward chat messages to:
+
+- OpenAI / Groq / Claude
+- Your own FastAPI/Express backend
+- WebSocket servers
+
+## 🔐 Authentication Example
+
+<CodeBlock language="tsx">
+useEffect(() =&gt; {
+  chat.connect({ token: userToken });
+}, [userToken]);
+</CodeBlock>
+
+## 📚 Docs
+
+- [GitHub](https://github.com/ai-sdk/chat)
+- [REST API Guide](https://docs.ai-sdk.dev/chat)
