@@ -1,0 +1,134 @@
+---
+title: Shadcn UI + Next.js
+description: Integration guide for using Shadcn UI with Next.js App Router
+---
+
+import { CodeBlock, Callout, ToolCard } from '@/components/mdx'
+
+<ToolCard name="Shadcn UI" version="latest" status="stable">
+  A beautiful, accessible, and customizable component library built with Tailwind CSS, Radix UI, and fully compatible with Next.js 14+ App Router.
+</ToolCard>
+
+<Callout type="info">
+  This guide assumes you're using **Next.js 14+** with the **App Router** and **TypeScript** enabled.
+</Callout>
+
+## ✨ Features
+
+- ⛓️ Built on Radix UI primitives
+- 🎨 Fully customizable with Tailwind CSS
+- 🧱 Component-driven architecture
+- 🌙 Dark mode support out of the box
+- 🔌 CLI for scaffolding and customization
+
+---
+
+## 📦 Installation
+
+<CodeBlock language="bash">
+npx shadcn-ui@latest init
+</CodeBlock>
+
+Choose:
+
+- Framework: `Next.js`
+- Language: `TypeScript`
+- Styling: `Tailwind CSS`
+- App Directory: `Yes`
+- Components: Start with `alert`, `button`, `card`, etc.
+
+---
+
+## ⚙️ Usage Example
+
+### `app/page.tsx`
+
+<CodeBlock language="tsx">
+import { Button } from "@/components/ui/button";
+
+export default function Home() {
+  return (
+    &lt;main className="flex flex-col items-center justify-center h-screen"&gt;
+      &lt;Button variant="ghost"&gt;
+        Click Me
+      &lt;/Button&gt;
+    &lt;/main&gt;
+  );
+}
+</CodeBlock>
+
+---
+
+## 🎛️ Customization
+
+Components live in your local `/components/ui` directory and can be fully customized:
+
+<CodeBlock language="tsx">
+export const Button = forwardRef&lt;HTMLButtonElement, ButtonProps&gt;(({
+  className,
+  variant,
+  size,
+  ...props
+}, ref) =&gt; {
+  return (
+    &lt;button
+      ref={ref}
+      className={cn("inline-flex items-center rounded-md", className)}
+      {...props}
+    /&gt;
+  )
+});
+</CodeBlock>
+
+> Tip: Use the `shadcn-ui@latest add <component>` command to scaffold new components.
+
+---
+
+## 🧪 Example: Ghost Button with Icon
+
+<CodeBlock language="tsx">
+import { Button } from "@/components/ui/button"
+import { LucideBolt } from "lucide-react"
+
+export const IconButton = () =&gt; (
+  &lt;Button variant="ghost"&gt;
+    &lt;LucideBolt className="mr-2 h-4 w-4" /&gt;
+    Deploy
+  &lt;/Button&gt;
+);
+</CodeBlock>
+
+---
+
+## 🧰 CLI Utilities
+
+| Command | Description |
+|--------|-------------|
+| `shadcn-ui init` | Initializes the setup |
+| `shadcn-ui add button` | Adds a new UI component |
+| `shadcn-ui upgrade` | Updates all local components |
+
+---
+
+## ✅ Recommended Config
+
+- Tailwind v3.4+ with `@tailwindcss/forms`
+- Prettier with Tailwind plugin
+- Radix UI for accessibility and composability
+- Zod for input validation in server actions
+
+---
+
+## 🧠 Why Use Shadcn UI?
+
+<Callout type="success">
+  Unlike component libraries like Chakra or MUI, Shadcn UI gives **you full control**. The components are just code — easily readable, customizable, and built to scale.
+</Callout>
+
+---
+
+## 📚 Resources
+
+- [Shadcn UI Docs](https://ui.shadcn.com)
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [Radix UI Primitives](https://www.radix-ui.com/docs/primitives)
