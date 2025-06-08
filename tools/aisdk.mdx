@@ -1,0 +1,41 @@
+---
+title: AI SDK
+description: Modular TypeScript SDK for LLM-based app development
+---
+
+import { CodeBlock, Callout, ToolCard } from '@/components/mdx'
+
+<ToolCard name="AI SDK" version="0.6.0" status="beta">
+  Build LLM-based applications with tools, chains, memory, and streaming support using a unified TypeScript SDK.
+</ToolCard>
+
+<Callout type="warning">
+  AI SDK is still in beta. Expect breaking changes in minor releases.
+</Callout>
+
+## 🛠️ Installation
+
+<CodeBlock language="bash">
+npm install ai-sdk
+</CodeBlock>
+
+## 🧠 Chain of Thought Example
+
+<CodeBlock language="tsx">
+import { Chat, tool } from "ai-sdk";
+
+const agent = new Chat({
+  tools: [tool("weather"), tool("calculator")],
+});
+
+const res = await agent.send("What's the weather in Tokyo + 3 days from now?");
+</CodeBlock>
+
+## 🧩 Features
+
+- Tool calling with OpenAI or local models
+- Memory and context caching
+- Streaming support via async generators
+- Built-in logging and tracing
+
+## 📁 Directory Example
