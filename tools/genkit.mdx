@@ -1,0 +1,57 @@
+---
+title: Genkit
+description: Google’s open-source framework for building AI apps with composable flows
+---
+
+import { CodeBlock, Callout, ToolCard } from '@/components/mdx'
+
+<ToolCard name="Genkit" version="0.4.1" status="alpha">
+  Genkit helps you orchestrate LLM pipelines using structured flows, observability, and developer-friendly tools.
+</ToolCard>
+
+<Callout type="info">
+  Genkit is best suited for TypeScript and Node.js developers building custom AI workflows with flexibility.
+</Callout>
+
+## 🧱 Install
+
+<CodeBlock language="bash">
+npm create genkit@latest
+</CodeBlock>
+
+Then run:
+
+<CodeBlock language="bash">
+cd my-ai-app
+npm run dev
+</CodeBlock>
+
+## 🔧 Workflow Example
+
+<CodeBlock language="ts">
+import { defineFlow, useOpenAI } from "@genkit-ai/core";
+
+export const planTrip = defineFlow("planTrip", async (input) =&gt; {
+  const gpt = useOpenAI();
+  return await gpt.chat("Plan a 3-day trip to Kyoto");
+});
+</CodeBlock>
+
+## 🪄 Key Features
+
+- LLM provider abstraction (OpenAI, PaLM, Claude)
+- Tracing and visualization with Dev UI
+- Local emulator and deploy to Google Cloud
+- Tool and plugin support
+
+## 🖥️ Dev UI
+
+<CodeBlock language="bash">
+npm run dev
+# visit http://localhost:3000/genkit
+</CodeBlock>
+
+## 📚 Resources
+
+- [Genkit.dev](https://genkit.dev)
+- [GitHub Repo](https://github.com/google/genkit)
